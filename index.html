@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destination Unlocked</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="container">
+      <h1>Destination Unlocked</h1>
+      <p class="subtitle">
+        Recommends U.S. destinations based on short-term National Weather Service (NWS) forecasts and your weather preferences.
+      </p>
+    </header>
+
+    <main class="container">
+      <!-- Preferences -->
+      <section class="card">
+        <h2>Your Preferences</h2>
+
+        <form id="prefsForm">
+          <div class="grid">
+            <label class="field">
+              <span>Min Temp (°F)</span>
+              <input id="minTemp" type="number" value="60" />
+            </label>
+
+            <label class="field">
+              <span>Max Temp (°F)</span>
+              <input id="maxTemp" type="number" value="70" />
+            </label>
+
+            <label class="field">
+              <span>Max Precip Probability (%)</span>
+              <input id="maxPrecip" type="number" value="60" min="0" max="100" />
+            </label>
+
+            <label class="field">
+              <span>Travel Season (preference)</span>
+              <select id="season">
+                <option>Spring</option>
+                <option>Summer</option>
+                <option selected>Fall</option>
+                <option>Winter</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="runBtn" type="submit">Find My Top 5 Destinations</button>
+            <button id="resetBtn" type="button" class="secondary">Reset Defaults</button>
+          </div>
+
+          <p class="note">
+            <strong>Important limitation:</strong> NWS provides short-term forecasts (days ahead), not seasonal forecasts months in advance.
+            The “Travel Season” input is a preference label for your project demo and does not change the forecast data.
+          </p>
+        </form>
+      </section>
+
+      <!-- Results -->
+      <section class="card">
+        <h2>Results</h2>
+
+        <div id="status" class="status idle">
+          Enter preferences and click <strong>Find My Top 5 Destinations</strong>.
+        </div>
+
+        <div id="selectedPrefs" class="selected-prefs" hidden></div>
+
+        <div id="results" class="results" hidden></div>
+
+        <div id="explain" class="explain" hidden></div>
+
+        <details class="transparency">
+          <summary>Transparency &amp; how scoring works</summary>
+          <div class="details-body">
+            <p>
+              This app ranks destinations using available short-term NWS forecast periods. A period “matches” if:
+            </p>
+            <ul>
+              <li>Temperature is within your selected range, and</li>
+              <li>Probability of precipitation is at or below your maximum.</li>
+            </ul>
+            <p>
+              <strong>Destination Score (0–100)</strong> =
+              (qualifying forecast periods ÷ total valid forecast periods) × 100.
+            </p>
+            <p>
+              A higher score means the forecast better matches your weather preferences — not that it’s the best overall vacation experience.
+              Forecasts can change.
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+
+    <footer class="container footer">
+      <p>Data source: National Weather Service (api.weather.gov). Built for a class project prototype.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
