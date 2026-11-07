@@ -48,8 +48,24 @@ const DESTINATIONS = [
   { name: "Dallas, TX", lat: 32.7767, lon: -96.797 },
   { name: "Salt Lake City, UT", lat: 40.7608, lon: -111.891 },
   { name: "Minneapolis, MN", lat: 44.9778, lon: -93.265 },
-  { name: "Washington, DC", lat: 38.9072, lon: -77.0369 },
   { name: "Albuquerque, NM", lat: 35.0844, lon: -106.6504 }
+  { name: "Washington, DC", lat: 38.9072, lon: -77.0369 },
+  { name: "Tampa, FL", lat: 27.9506, lon: -82.4572 },
+  { name: "Philadelphia, PA", lat: 39.9526, lon: -75.1652 },
+  { name: "Santa Fe, NM", lat: 35.6870, lon: -105.9378 },
+  { name: "Charlotte, NC", lat: 35.2271, lon: -80.8431 },
+  { name: "Boise, ID", lat: 43.6150, lon: -116.2023 },
+  { name: "Detroit, MI", lat: 42.3314, lon: -83.0458 }
+  { name: "Cleveland, OH", lat: 41.4993, lon: -81.6944 },
+  { name: "Pittsburgh, PA", lat: 40.4406, lon: -79.9959 },
+  { name: "Jacksonville, FL", lat: 30.3322, lon: -81.6557 },
+  { name: "Birmingham, AL", lat: 33.5186, lon: -86.8104 },
+  { name: "Raleigh, NC", lat: 35.7796, lon: -78.6382 },
+  { name: "Oklahoma City, OK", lat: 35.4676, lon: -97.5164 },
+  { name: "Kansas City, MO", lat: 39.0997, lon: -94.5786 },
+  { name: "Bozeman, MT", lat: 45.6770, lon: -111.0429 },
+  { name: "Reno, NV", lat: 39.5296, lon: -119.8138 },
+  { name: "Burlington, VT", lat: 44.4759, lon: -73.2121 }
 ];
 
 // -------------------- DOM --------------------
