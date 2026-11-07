@@ -23,6 +23,8 @@
 
 // -------------------- Predefined destinations (lat/lon) --------------------
 const DESTINATIONS = [
+
+const DESTINATIONS = [
   { name: "San Diego, CA", lat: 32.7157, lon: -117.1611 },
   { name: "Miami, FL", lat: 25.7617, lon: -80.1918 },
   { name: "New York City, NY", lat: 40.7128, lon: -74.006 },
@@ -34,7 +36,20 @@ const DESTINATIONS = [
   { name: "Nashville, TN", lat: 36.1627, lon: -86.7816 },
   { name: "New Orleans, LA", lat: 29.9511, lon: -90.0715 },
   { name: "Honolulu, HI", lat: 21.3069, lon: -157.8583 },
-  { name: "Anchorage, AK", lat: 61.2181, lon: -149.9003 }
+  { name: "Anchorage, AK", lat: 61.2181, lon: -149.9003 },
+  { name: "Charleston, SC", lat: 32.7765, lon: -79.9311 },
+  { name: "Savannah, GA", lat: 32.0809, lon: -81.0912 },
+  { name: "Austin, TX", lat: 30.2672, lon: -97.7431 },
+  { name: "Portland, OR", lat: 45.5152, lon: -122.6784 },
+  { name: "Boston, MA", lat: 42.3601, lon: -71.0589 },
+  { name: "Orlando, FL", lat: 28.5383, lon: -81.3792 },
+  { name: "San Francisco, CA", lat: 37.7749, lon: -122.4194 },
+  { name: "Los Angeles, CA", lat: 34.0522, lon: -118.2437 },
+  { name: "Dallas, TX", lat: 32.7767, lon: -96.797 },
+  { name: "Salt Lake City, UT", lat: 40.7608, lon: -111.891 },
+  { name: "Minneapolis, MN", lat: 44.9778, lon: -93.265 },
+  { name: "Washington, DC", lat: 38.9072, lon: -77.0369 },
+  { name: "Albuquerque, NM", lat: 35.0844, lon: -106.6504 }
 ];
 
 // -------------------- DOM --------------------
