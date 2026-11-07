@@ -250,3 +250,8 @@ button:disabled {
   color: var(--muted);
   font-size: 0.9rem;
 }
+.note,
+#reminder,
+.reminder {
+  color: #344638 !important;
+}
