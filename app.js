@@ -23,8 +23,6 @@
 
 // -------------------- Predefined destinations (lat/lon) --------------------
 const DESTINATIONS = [
-
-const DESTINATIONS = [
   { name: "San Diego, CA", lat: 32.7157, lon: -117.1611 },
   { name: "Miami, FL", lat: 25.7617, lon: -80.1918 },
   { name: "New York City, NY", lat: 40.7128, lon: -74.006 },
