@@ -124,9 +124,9 @@ function renderExplanation(top) {
 
   explainEl.innerHTML = `
     <strong>Why #1 ranked first:</strong> ${why}
-    <div style="margin-top:8px; color: rgba(231,238,252,0.85);">
-      Reminder: this is based on short-term NWS forecasts available right now; forecasts can change.
-    </div>
+    <div style="margin-top:8px; color: #344638;">
+  Reminder: this is based on short-term NWS forecasts available right now; forecasts can change.
+</div>
   `;
 }
 
