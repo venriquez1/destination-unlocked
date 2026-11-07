@@ -1,3 +1,4 @@
+
 /**
  * Destination Unlocked (prototype)
  * End-to-end flow:
@@ -223,6 +224,8 @@ function scoreDestination(periods, prefs) {
 
   let valid = 0;
   let qualifying = 0;
+  let tempTotal = 0;
+  let precipTotal = 0;
 
   for (const p of periods) {
     const temp = p?.temperature;
@@ -232,6 +235,8 @@ function scoreDestination(periods, prefs) {
     if (!Number.isFinite(temp) || !Number.isFinite(pop)) continue;
 
     valid += 1;
+    tempTotal += temp;
+    precipTotal += pop;
 
     const tempOk = temp >= minTemp && temp <= maxTemp;
     const precipOk = pop <= maxPrecip;
@@ -244,7 +249,9 @@ function scoreDestination(periods, prefs) {
   return {
     score,
     validPeriods: valid,
-    qualifyingPeriods: qualifying
+    qualifyingPeriods: qualifying,
+    avgTemp: valid > 0 ? tempTotal / valid : null,
+    avgPrecip: valid > 0 ? precipTotal / valid : null
   };
 }
 
@@ -300,10 +307,34 @@ form.addEventListener("submit", async (e) => {
     const successes = scored.filter((x) => x.ok);
     const failures = scored.filter((x) => !x.ok);
 
-    // Sort by score desc, then validPeriods desc as a tie-breaker
+    // Rank by the original score, then use forecast details to break ties.
+    const preferredMidpoint = (prefs.minTemp + prefs.maxTemp) / 2;
+
     const ranked = [...successes].sort((a, b) => {
+      // First: highest original weather-match score.
       if (b.score !== a.score) return b.score - a.score;
-      return (b.validPeriods || 0) - (a.validPeriods || 0);
+
+      // Second: most valid forecast periods.
+      if (b.validPeriods !== a.validPeriods) {
+        return b.validPeriods - a.validPeriods;
+      }
+
+      // Third: average temperature closest to the preferred-range midpoint.
+      const aTempDifference = Number.isFinite(a.avgTemp)
+        ? Math.abs(a.avgTemp - preferredMidpoint)
+        : Infinity;
+      const bTempDifference = Number.isFinite(b.avgTemp)
+        ? Math.abs(b.avgTemp - preferredMidpoint)
+        : Infinity;
+
+      if (aTempDifference !== bTempDifference) {
+        return aTempDifference - bTempDifference;
+      }
+
+      // Fourth: lower average precipitation probability.
+      const aPrecip = Number.isFinite(a.avgPrecip) ? a.avgPrecip : Infinity;
+      const bPrecip = Number.isFinite(b.avgPrecip) ? b.avgPrecip : Infinity;
+      return aPrecip - bPrecip;
     });
 
     const topFive = ranked.slice(0, 5);
