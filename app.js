@@ -124,7 +124,7 @@ function renderExplanation(top) {
 
   explainEl.innerHTML = `
     <strong>Why #1 ranked first:</strong> ${why}
-    <div style="margin-top:8px; color: #344638;">
+    <div style="margin-top:8px; color: #344638 !important; background: #f0f4ed; padding: 8px; border-radius: 8px;">
   Reminder: this is based on short-term NWS forecasts available right now; forecasts can change.
 </div>
   `;
