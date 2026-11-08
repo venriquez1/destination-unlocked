@@ -31,7 +31,6 @@ const DESTINATIONS = [
   { name: "Seattle, WA", lat: 47.6062, lon: -122.3321 },
   { name: "Denver, CO", lat: 39.7392, lon: -104.9903 },
   { name: "Phoenix, AZ", lat: 33.4484, lon: -112.074 },
-  { name: "Las Vegas, NV", lat: 36.1699, lon: -115.1398 },
   { name: "Nashville, TN", lat: 36.1627, lon: -86.7816 },
   { name: "New Orleans, LA", lat: 29.9511, lon: -90.0715 },
   { name: "Honolulu, HI", lat: 21.3069, lon: -157.8583 },
