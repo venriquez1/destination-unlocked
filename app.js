@@ -1,6 +1,6 @@
 
 /**
- * Destination Unlocked (prototype)
+ * Destination Unlocked Finding your perfect U.S vacation destination! (prototype)
  * End-to-end flow:
  * user inputs -> real NWS API requests -> calculated scores -> top five results
  *
